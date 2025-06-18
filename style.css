@@ -84,11 +84,20 @@ a:hover {
     transform: translateY(0);
 }
 
-.header-section, .experience-item, .language-list, .footer-section, .accordion, .games-grid {
-    /* Tyto styly zůstávají stejné jako v předchozí verzi */
+.experience-item {
+    margin-bottom: 1.5rem;
 }
 
-/* ÚPRAVA ZDE: Styly pro sekci dovedností */
+.experience-item h3 {
+    margin-bottom: 0.25rem;
+}
+
+.experience-item .company-details {
+    color: var(--secondary-text-color);
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -96,10 +105,10 @@ a:hover {
 }
 
 .skill-category {
-    background-color: #2a2a2a; /* Pozadí karty */
-    padding: 1.5rem; /* Vnitřní odsazení */
-    border-radius: 8px; /* Zakulacené rohy */
-    border: 1px solid var(--border-color); /* Jemný rámeček */
+    background-color: #2a2a2a;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -131,69 +140,12 @@ a:hover {
     font-weight: 500;
 }
 
-/* Aplikace barev na štítky zůstává stejná */
-.skill-category ul li:nth-child(5n + 1) {
-    background-color: var(--pill-color-1);
-    color: var(--pill-color-text-1);
-}
-.skill-category ul li:nth-child(5n + 2) {
-    background-color: var(--pill-color-2);
-    color: var(--pill-color-text-2);
-}
-.skill-category ul li:nth-child(5n + 3) {
-    background-color: var(--pill-color-3);
-    color: var(--pill-color-text-3);
-}
-.skill-category ul li:nth-child(5n + 4) {
-    background-color: var(--pill-color-4);
-    color: var(--pill-color-text-4);
-}
-.skill-category ul li:nth-child(5n + 5) {
-    background-color: var(--pill-color-5);
-    color: var(--pill-color-text-5);
-}
+.skill-category ul li:nth-child(5n + 1) { background-color: var(--pill-color-1); color: var(--pill-color-text-1); }
+.skill-category ul li:nth-child(5n + 2) { background-color: var(--pill-color-2); color: var(--pill-color-text-2); }
+.skill-category ul li:nth-child(5n + 3) { background-color: var(--pill-color-3); color: var(--pill-color-text-3); }
+.skill-category ul li:nth-child(5n + 4) { background-color: var(--pill-color-4); color: var(--pill-color-text-4); }
+.skill-category ul li:nth-child(5n + 5) { background-color: var(--pill-color-5); color: var(--pill-color-text-5); }
 
-#repo-card-placeholder {
-    background-color: #2a2a2a;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 2rem;
-    margin-top: 1.5rem;
-}
-.repo-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}.repo-header h3{margin:0;font-size:1.5rem}.repo-header a{text-decoration:none;color:var(--primary-text-color);transition:color .3s ease}.repo-header a:hover{color:var(--accent-color)}.repo-description{color:var(--secondary-text-color);margin-bottom:1.5rem;font-style:italic}.repo-stats{display:flex;flex-wrap:wrap;gap:1.5rem;padding-top:1rem;border-top:1px solid var(--border-color)}.stat-item{display:flex;align-items:center;gap:.5rem;font-size:1rem;font-weight:500}.stat-item i{font-size:1.25rem;color:var(--secondary-text-color)}.repo-footer{margin-top:1.5rem;font-size:.9rem;color:var(--secondary-text-color);text-align:right}.repo-readme{margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border-color);color:var(--secondary-text-color);line-height:1.7}.repo-readme h1,.repo-readme h2,.repo-readme h3{color:var(--primary-text-color);border-bottom:1px solid var(--border-color);padding-bottom:.5rem;margin-top:2rem;margin-bottom:1rem}.repo-readme p{margin-bottom:1rem}.repo-readme a{color:var(--accent-color)}.repo-readme ul,.repo-readme ol{padding-left:1.5rem;margin-bottom:1rem}.repo-readme li{margin-bottom:.5rem}.repo-readme code{background-color:var(--bg-color);padding:.2rem .4rem;border-radius:4px;font-family:'Courier New',Courier,monospace;font-size:.9rem}.repo-readme pre{background-color:var(--bg-color);padding:1rem;border-radius:5px;overflow-x:auto}.repo-readme pre code{padding:0;background-color:transparent}
-
-/* === Weather Widget Styles === */
-#weather-widget,
-#btc-price-widget {
-    background-color: #2a2a2a;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 0.75rem 1.5rem;
-    display: flex; /* Změna na flex pro lepší zarovnání obsahu */
-    align-items: center;
-    gap: 1rem;
-    font-size: 1rem;
-    font-weight: 500;
-    min-height: 58px; /* Sjednocení výšky */
-}
-
-#weather-widget .weather-icon,
-#btc-price-widget .btc-icon {
-    font-size: 1.8rem;
-}
-
-#btc-price-widget .btc-icon i {
-    color: #f7931a; /* Oranžová barva Bitcoinu */
-}
-
-.footer-widgets {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap; /* Pokud by se nevešly, zalamují se pod sebe */
-    gap: 1rem;
-    margin-bottom: 2.5rem;
-}
 .accordion { margin-top: 1.5rem; }
 .accordion-item { border-bottom: 1px solid var(--border-color); }
 .accordion-item:last-child { border-bottom: none; }
@@ -207,6 +159,7 @@ a:hover {
 .accordion-content-inner ul li { margin-bottom: 0.5rem; }
 .visit-website-button { display: inline-block; background-color: var(--accent-color); color: white; padding: 0.5rem 1.25rem; border-radius: 5px; font-weight: 500; margin-top: 1.25rem; text-decoration: none; transition: background-color 0.3s ease; }
 .visit-website-button:hover { background-color: #0056b3; color: white; }
+
 .games-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-top: 1.5rem; }
 .game-card { background-color: #2a2a2a; border: 1px solid var(--border-color); border-radius: 8px; display: flex; flex-direction: column; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; }
 .game-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); }
@@ -220,12 +173,79 @@ a:hover {
 .store-button.itch:hover { background-color: #fa4141; color: white; }
 .store-button.google { background-color: #4CAF50; }
 .store-button.google:hover { background-color: #45a049; color: white; }
+
 .language-list { list-style: none; padding: 0; }
 .language-list li { font-size: 1.1rem; margin-bottom: 0.5rem; }
-.footer-section { width: 100%; max-width: 900px; padding: 2rem; text-align: center; border-top: 1px solid var(--border-color); margin-top: 2rem; }
-.social-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; }
-.social-links a { margin: 0; padding: 0.5rem 1rem; border: 1px solid var(--accent-color); border-radius: 5px; transition: background-color 0.3s ease, color 0.3s ease; }
-.social-links a:hover { background-color: var(--accent-color); color: var(--bg-color); }
+
+.footer-section {
+    width: 100%;
+    max-width: 900px;
+    padding: 2rem;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    margin-top: 2rem;
+}
+
+/* === NOVÉ A UPRAVENÉ STYLY PRO WIDGETY V PATIČCE === */
+.footer-widgets {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem; /* Větší mezera mezi widgety */
+    margin-bottom: 2.5rem;
+}
+
+#weather-widget,
+#btc-price-widget {
+    background-color: #2a2a2a;
+    border: none; /* Odstraníme původní rámeček */
+    border-left: 4px solid; /* Nový barevný rámeček vlevo */
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    min-height: 58px;
+    transition: background-color 0.3s ease;
+}
+
+#weather-widget {
+    border-color: var(--accent-color); /* Modrý proužek */
+}
+
+#btc-price-widget {
+    border-color: #f7931a; /* Oranžový proužek */
+}
+
+#weather-widget .weather-icon,
+#btc-price-widget .btc-icon {
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+/* Odkaz na sociální sítě */
+.social-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+.social-links a {
+    margin: 0;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.social-links a:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
 @media (max-width: 768px) {
     h1 { font-size: 2rem; }
     h2 { font-size: 1.75rem; }
