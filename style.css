@@ -123,13 +123,68 @@ a:hover {
     border-left: 3px solid var(--accent-color);
 }
 
-.project-list, .language-list {
-    list-style: none;
-    padding: 0;
+.accordion {
+    margin-top: 1.5rem;
 }
 
-.project-list li, .language-list li {
+.accordion-item {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.accordion-item:last-child {
+    border-bottom: none;
+}
+
+.accordion-header {
+    background-color: transparent;
+    color: var(--primary-text-color);
+    cursor: pointer;
+    padding: 1.25rem 1rem;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
     font-size: 1.1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    position: relative;
+    padding-right: 3rem; 
+}
+
+.accordion-header:hover {
+    background-color: #2a2a2a;
+}
+
+.accordion-header::after {
+    content: '+';
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+}
+
+.accordion-header.active::after {
+    content: '−';
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: #2a2a2a;
+}
+
+.accordion-content ul {
+    padding: 1rem 2rem 1.5rem 3rem;
+    margin: 0;
+    color: var(--secondary-text-color);
+}
+
+.accordion-content ul li {
     margin-bottom: 0.5rem;
 }
 
@@ -161,12 +216,7 @@ a:hover {
     justify-content: center;
     align-items: center;
     min-height: 170px;
-}
-
-.game-preview iframe {
-    display: block;
-    width: 100%;
-    border: none;
+    padding: 1rem;
 }
 
 .game-preview .game-icon {
@@ -204,6 +254,7 @@ a:hover {
     font-weight: 600;
     transition: background-color 0.3s ease;
     border: none;
+    text-decoration: none;
 }
 
 .store-button.itch {
@@ -211,6 +262,7 @@ a:hover {
 }
 .store-button.itch:hover {
     background-color: #fa4141;
+    color: white;
 }
 
 .store-button.google {
@@ -218,8 +270,18 @@ a:hover {
 }
 .store-button.google:hover {
     background-color: #45a049;
+    color: white;
 }
 
+.language-list {
+    list-style: none;
+    padding: 0;
+}
+
+.language-list li {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
 
 .footer-section {
     width: 100%;
@@ -230,38 +292,4 @@ a:hover {
     margin-top: 2rem;
 }
 
-.social-links a {
-    margin: 0 1rem;
-    padding: 0.5rem 1rem;
-    border: 1px solid var(--accent-color);
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.social-links a:hover {
-    background-color: var(--accent-color);
-    color: var(--bg-color);
-}
-
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2rem;
-    }
-
-    h2 {
-        font-size: 1.75rem;
-    }
-
-    .container, .footer-section {
-        padding: 1.5rem;
-    }
-    
-    .content-section {
-        padding: 1.5rem;
-    }
-    
-    .social-links a {
-        display: block;
-        margin: 0.5rem 0;
-    }
-}
+.social-links a
