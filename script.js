@@ -25,12 +25,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // NOVÁ FUNKCE PRO VYGENEREOVÁNÍ CELÉ INFO LIŠTY
+    // FINÁLNÍ FUNKCE PRO VYGENEREOVÁNÍ INFO LIŠTY
     async function fetchInfoData() {
         const infoBar = document.getElementById('info-bar');
         if (!infoBar) return;
 
-        // Použijeme Promise.allSettled, aby chyba v jednom API neovlivnila druhé
+        // Vytvoříme vnitřní kontejner pro obsah
+        infoBar.innerHTML = `<div class="info-bar-content"><p>Loading live data...</p></div>`;
+        const contentWrapper = infoBar.querySelector('.info-bar-content');
+
         const [weatherResult, btcResult] = await Promise.allSettled([
             fetch('https://api.open-meteo.com/v1/forecast?latitude=49.83&longitude=18.28&current=temperature_2m,weather_code'),
             fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=czk')
@@ -52,19 +55,17 @@ document.addEventListener('DOMContentLoaded', () => {
             btcHTML = `<div class="info-item"><span class="icon" style="color:#f7931a;">₿</span> <span class="label">Bitcoin:</span> ${formatter.format(priceCzk)}</div>`;
         }
         
-        // Vložíme finální HTML do lišty
-        infoBar.innerHTML = `
+        // Vložíme finální HTML do vnitřního kontejneru
+        contentWrapper.innerHTML = `
             ${weatherHTML}
             <div class="info-separator"></div>
             ${btcHTML}
         `;
     }
 
-    // Pomocná funkce pro ikonu počasí
     function getWeatherIcon(code) {
         if (code === 0) return '☀️'; if (code === 1) return '🌤️'; if (code === 2) return '🌥️'; if (code === 3) return '☁️'; if (code >= 51 && code <= 67) return '🌧️'; if (code >= 71 && code <= 77) return '❄️'; if (code >= 80 && code <= 82) return '🌦️'; if (code >= 95 && code <= 99) return '⛈️'; return '🌍';
     }
 
-    // Zavolání funkce
     fetchInfoData();
 });
