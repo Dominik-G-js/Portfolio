@@ -153,6 +153,74 @@ a:hover {
     color: var(--pill-color-text-5);
 }
 
+
+/* Vlož tento kód na konec tvého stávajícího style.css souboru */
+
+/* === GitHub Showcase Card Styles === */
+#repo-card-placeholder {
+    background-color: #2a2a2a;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-top: 1.5rem;
+}
+
+.repo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.repo-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.repo-header a {
+    text-decoration: none;
+    color: var(--primary-text-color);
+    transition: color 0.3s ease;
+}
+
+.repo-header a:hover {
+    color: var(--accent-color);
+}
+
+.repo-description {
+    color: var(--secondary-text-color);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.repo-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.stat-item i {
+    font-size: 1.25rem;
+    color: var(--secondary-text-color);
+}
+
+.repo-footer {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--secondary-text-color);
+    text-align: right;
+}
+
 /* Ostatní styly pro accordion, hry, patičku atd. musí být zachovány */
 /* Ujisti se, že máš v tomto souboru všechny potřebné styly z naší finální předchozí verze */
 .accordion { margin-top: 1.5rem; }
