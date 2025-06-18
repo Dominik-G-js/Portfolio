@@ -32,52 +32,65 @@ document.addEventListener('DOMContentLoaded', () => {
     async function fetchRepoData() {
         const username = 'Dominik-G-js';
         const repo = 'Portfolio';
-        const url = `https://api.github.com/repos/${username}/${repo}`;
+        const repoUrl = `https://api.github.com/repos/${username}/${repo}`;
+        const readmeUrl = `https://api.github.com/repos/${username}/${repo}/readme`;
         const placeholder = document.getElementById('repo-card-placeholder');
 
         try {
-            const response = await fetch(url);
-            if (!response.ok) {
-                throw new Error(`Network response was not ok: ${response.statusText}`);
-            }
-            const data = await response.json();
+            // Použijeme Promise.all pro paralelní stahování obou zdrojů
+            const [repoResponse, readmeResponse] = await Promise.all([
+                fetch(repoUrl),
+                fetch(readmeUrl)
+            ]);
 
-            // Formátování data pro lepší čitelnost
-            const lastUpdated = new Date(data.updated_at).toLocaleDateString('cs-CZ', {
-                day: 'numeric',
-                month: 'long',
-                year: 'numeric'
+            if (!repoResponse.ok || !readmeResponse.ok) {
+                throw new Error(`Network response was not ok.`);
+            }
+
+            const repoData = await repoResponse.json();
+            const readmeData = await readmeResponse.json();
+            
+            // Dekódování README z Base64 a konverze na HTML
+            const readmeMarkdown = atob(readmeData.content);
+            const readmeHTML = marked.parse(readmeMarkdown);
+
+            const lastUpdated = new Date(repoData.updated_at).toLocaleDateString('cs-CZ', {
+                day: 'numeric', month: 'long', year: 'numeric'
             });
 
-            const repoHTML = `
+            const repoCardHTML = `
                 <div class="repo-header">
                     <h3>
-                        <a href="${data.html_url}" target="_blank" rel="noopener noreferrer">
-                            ${data.name}
+                        <a href="${repoData.html_url}" target="_blank" rel="noopener noreferrer">
+                            ${repoData.name}
                         </a>
                     </h3>
                 </div>
-                <p class="repo-description">${data.description || 'No description provided.'}</p>
+                <p class="repo-description">${repoData.description || 'No description provided.'}</p>
                 <div class="repo-stats">
                     <div class="stat-item">
                         <i class="devicon-star-plain"></i>
-                        <span>${data.stargazers_count} Stars</span>
+                        <span>${repoData.stargazers_count} Stars</span>
                     </div>
                     <div class="stat-item">
                         <i class="devicon-git-plain"></i>
-                        <span>${data.forks_count} Forks</span>
+                        <span>${repoData.forks_count} Forks</span>
                     </div>
                     <div class="stat-item">
-                        <span style="color: ${getLanguageColor(data.language)}; font-size: 1.5rem;">●</span>
-                        <span>${data.language}</span>
+                        <span style="color: ${getLanguageColor(repoData.language)}; font-size: 1.5rem;">●</span>
+                        <span>${repoData.language}</span>
                     </div>
                 </div>
                 <div class="repo-footer">
                     Last updated: ${lastUpdated}
                 </div>
+                
+                <div class="repo-readme">
+                    ${readmeHTML}
+                </div>
             `;
 
-            placeholder.innerHTML = repoHTML;
+            placeholder.innerHTML = repoCardHTML;
 
         } catch (error) {
             placeholder.innerHTML = `<p>Failed to load project data. Please try again later.</p>`;
@@ -85,19 +98,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Pomocná funkce pro barvu jazyka (můžeš si přizpůsobit)
+    // Pomocná funkce pro barvu jazyka zůstává stejná
     function getLanguageColor(language) {
         const colors = {
-            "JavaScript": "#f1e05a",
-            "HTML": "#e34c26",
-            "CSS": "#563d7c",
-            "Python": "#3572A5",
-            "PHP": "#4F5D95",
-            "Vue": "#4FC08D"
+            "JavaScript": "#f1e05a", "HTML": "#e34c26", "CSS": "#563d7c",
+            "Python": "#3572A5", "PHP": "#4F5D95", "Vue": "#4FC08D"
         };
-        return colors[language] || '#cccccc'; // Výchozí barva
+        return colors[language] || '#cccccc';
     }
 
-    // Zavolání nové funkce po načtení stránky
+    // Zavolání funkce po načtení stránky
     fetchRepoData();
 });
