@@ -20,8 +20,18 @@
     --pill-color-text-5: #84bdef;
 }
 
-body{font-family:'Poppins',sans-serif;background-color:var(--bg-color);color:var(--primary-text-color);line-height:1.6;margin:0;padding:0;display:flex;flex-direction:column;align-items:center}.container{width:100%;max-width:900px;padding:2rem}h1,h2,h3{color:var(--primary-text-color);font-weight:600}h1{font-size:2.5rem;border-bottom:2px solid var(--accent-color);padding-bottom:.5rem;margin-bottom:1rem}h2{font-size:2rem;margin-bottom:1.5rem;padding-bottom:.5rem;border-bottom:1px solid var(--border-color)}a{color:var(--accent-color);text-decoration:none;transition:color .3s ease}a:hover{color:#4da3ff}.content-section{background-color:var(--card-color);border:1px solid var(--border-color);border-radius:8px;padding:2rem;margin-bottom:2rem;box-shadow:0 4px 15px var(--shadow-color);opacity:0;transform:translateY(20px);transition:opacity .6s ease-out,transform .6s ease-out}.content-section.visible{opacity:1;transform:translateY(0)}.experience-item{margin-bottom:1.5rem}.experience-item h3{margin-bottom:.25rem}.experience-item .company-details{color:var(--secondary-text-color);font-style:italic;margin-bottom:.5rem}.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem}.skill-category{background-color:#2a2a2a;padding:1.5rem;border-radius:8px;border:1px solid var(--border-color);transition:transform .3s ease,box-shadow .3s ease}.skill-category:hover{transform:translateY(-5px);box-shadow:0 8px 20px rgba(0,0,0,.5)}.skill-category h3{color:var(--accent-color);margin-top:0;margin-bottom:1.5rem;font-size:1.2rem}.skill-category ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:.75rem}.skill-category li{padding:.4rem 1rem;border-radius:20px;font-size:.95rem;font-weight:500}.skill-category ul li:nth-child(5n+1){background-color:var(--pill-color-1);color:var(--pill-color-text-1)}.skill-category ul li:nth-child(5n+2){background-color:var(--pill-color-2);color:var(--pill-color-text-2)}.skill-category ul li:nth-child(5n+3){background-color:var(--pill-color-3);color:var(--pill-color-text-3)}.skill-category ul li:nth-child(5n+4){background-color:var(--pill-color-4);color:var(--pill-color-text-4)}.skill-category ul li:nth-child(5n+5){background-color:var(--pill-color-5);color:var(--pill-color-text-5)}.accordion{margin-top:1.5rem}.accordion-item{border-bottom:1px solid var(--border-color)}.accordion-item:last-child{border-bottom:none}.accordion-header{background-color:transparent;color:var(--primary-text-color);cursor:pointer;padding:1.25rem 1rem;width:100%;border:none;text-align:left;outline:none;font-size:1.1rem;font-weight:600;transition:background-color .3s ease;position:relative;padding-right:3rem}.accordion-header:hover{background-color:#2a2a2a}.accordion-header::after{content:'+';font-size:1.5rem;color:var(--accent-color);position:absolute;right:1rem;top:50%;transform:translateY(-50%);transition:transform .3s ease}.accordion-header.active::after{content:'−';transform:translateY(-50%) rotate(180deg)}.accordion-content{max-height:0;overflow:hidden;transition:max-height .3s ease-out;background-color:#2a2a2a}.accordion-content-inner{padding:1rem 2rem 1.5rem 2rem}.accordion-content-inner ul{padding:0 0 0 1.5rem;margin:0;color:var(--secondary-text-color)}.accordion-content-inner ul li{margin-bottom:.5rem}.visit-website-button{display:inline-block;background-color:var(--accent-color);color:#fff;padding:.5rem 1.25rem;border-radius:5px;font-weight:500;margin-top:1.25rem;text-decoration:none;transition:background-color .3s ease}.visit-website-button:hover{background-color:#0056b3;color:#fff}.games-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;margin-top:1.5rem}.game-card{background-color:#2a2a2a;border:1px solid var(--border-color);border-radius:8px;display:flex;flex-direction:column;overflow:hidden;transition:transform .3s ease,box-shadow .3s ease}.game-card:hover{transform:translateY(-5px);box-shadow:0 8px 20px rgba(0,0,0,.6)}.game-preview{background-color:#121212;display:flex;justify-content:center;align-items:center;min-height:170px;padding:1rem}.game-preview .game-icon{width:120px;height:120px;border-radius:22px}.game-info{padding:1.5rem;text-align:center;display:flex;flex-direction:column;flex-grow:1}.game-info h3{margin-top:0;margin-bottom:1rem}.game-links{margin-top:auto;display:flex;flex-direction:column;gap:.75rem}.store-button{display:inline-block;color:#fff;padding:.6rem 1rem;border-radius:5px;text-align:center;font-weight:600;transition:background-color .3s ease;border:none;text-decoration:none}.store-button.itch{background-color:#fa5c5c}.store-button.itch:hover{background-color:#fa4141;color:#fff}.store-button.google{background-color:#4caf50}.store-button.google:hover{background-color:#45a049;color:#fff}.language-list{list-style:none;padding:0}.language-list li{font-size:1.1rem;margin-bottom:.5rem}.footer-section{width:100%;max-width:900px;padding:2rem;text-align:center;border-top:1px solid var(--border-color);margin-top:2rem}
-
+/* === Základní styly === */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--primary-text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .container {
     width: 100%;
@@ -58,6 +68,7 @@ a:hover {
     color: #4da3ff;
 }
 
+/* === Hlavní sekce a animace === */
 .content-section {
     background-color: var(--card-color);
     border: 1px solid var(--border-color);
@@ -75,6 +86,7 @@ a:hover {
     transform: translateY(0);
 }
 
+/* === Sekce Zkušenosti === */
 .experience-item {
     margin-bottom: 1.5rem;
 }
@@ -89,6 +101,7 @@ a:hover {
     margin-bottom: 0.5rem;
 }
 
+/* === Sekce Dovednosti === */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -101,6 +114,8 @@ a:hover {
     border-radius: 8px;
     border: 1px solid var(--border-color);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .skill-category:hover {
@@ -122,6 +137,7 @@ a:hover {
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
+    margin-top: auto; /* Posune štítky na spodek, pokud je místo */
 }
 
 .skill-category li {
@@ -137,59 +153,73 @@ a:hover {
 .skill-category ul li:nth-child(5n + 4) { background-color: var(--pill-color-4); color: var(--pill-color-text-4); }
 .skill-category ul li:nth-child(5n + 5) { background-color: var(--pill-color-5); color: var(--pill-color-text-5); }
 
+/* === Sekce Projekty (Akordeon) === */
 .accordion { margin-top: 1.5rem; }
 .accordion-item { border-bottom: 1px solid var(--border-color); }
 .accordion-item:last-child { border-bottom: none; }
-.accordion-header { background-color: transparent; color: var(--primary-text-color); cursor: pointer; padding: 1.25rem 1rem; width: 100%; border: none; text-align: left; outline: none; font-size: 1.1rem; font-weight: 600; transition: background-color 0.3s ease; position: relative; padding-right: 3rem; }
+.accordion-header { background-color: transparent; color: var(--primary-text-color); cursor: pointer; padding: 1.25rem 1rem; width: 100%; border: none; text-align: left; outline: none; font-size: 1.1rem; font-weight: 600; transition: background-color .3s ease; position: relative; padding-right: 3rem; }
 .accordion-header:hover { background-color: #2a2a2a; }
-.accordion-header::after { content: '+'; font-size: 1.5rem; color: var(--accent-color); position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); transition: transform 0.3s ease; }
+.accordion-header::after { content: '+'; font-size: 1.5rem; color: var(--accent-color); position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); transition: transform .3s ease; }
 .accordion-header.active::after { content: '−'; transform: translateY(-50%) rotate(180deg); }
 .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; background-color: #2a2a2a; }
 .accordion-content-inner { padding: 1rem 2rem 1.5rem 2rem; }
 .accordion-content-inner ul { padding: 0 0 0 1.5rem; margin: 0; color: var(--secondary-text-color); }
 .accordion-content-inner ul li { margin-bottom: 0.5rem; }
-.visit-website-button { display: inline-block; background-color: var(--accent-color); color: white; padding: 0.5rem 1.25rem; border-radius: 5px; font-weight: 500; margin-top: 1.25rem; text-decoration: none; transition: background-color 0.3s ease; }
-.visit-website-button:hover { background-color: #0056b3; color: white; }
+.visit-website-button { display: inline-block; background-color: var(--accent-color); color: #fff; padding: .5rem 1.25rem; border-radius: 5px; font-weight: 500; margin-top: 1.25rem; text-decoration: none; transition: background-color .3s ease; }
+.visit-website-button:hover { background-color: #0056b3; color: #fff; }
 
-.games-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-top: 1.5rem; }
-.game-card { background-color: #2a2a2a; border: 1px solid var(--border-color); border-radius: 8px; display: flex; flex-direction: column; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-.game-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); }
+/* === Sekce Hry === */
+.games-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(320px,1fr)); gap: 2rem; margin-top: 1.5rem; }
+.game-card { background-color: #2a2a2a; border: 1px solid var(--border-color); border-radius: 8px; display: flex; flex-direction: column; overflow: hidden; transition: transform .3s ease,box-shadow .3s ease; }
+.game-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,.6); }
 .game-preview { background-color: #121212; display: flex; justify-content: center; align-items: center; min-height: 170px; padding: 1rem; }
 .game-preview .game-icon { width: 120px; height: 120px; border-radius: 22px; }
 .game-info { padding: 1.5rem; text-align: center; display: flex; flex-direction: column; flex-grow: 1; }
 .game-info h3 { margin-top: 0; margin-bottom: 1rem; }
-.game-links { margin-top: auto; display: flex; flex-direction: column; gap: 0.75rem; }
-.store-button { display: inline-block; color: white; padding: 0.6rem 1rem; border-radius: 5px; text-align: center; font-weight: 600; transition: background-color 0.3s ease; border: none; text-decoration: none; }
+.game-links { margin-top: auto; display: flex; flex-direction: column; gap: .75rem; }
+.store-button { display: inline-block; color: #fff; padding: .6rem 1rem; border-radius: 5px; text-align: center; font-weight: 600; transition: background-color .3s ease; border: none; text-decoration: none; }
 .store-button.itch { background-color: #fa5c5c; }
-.store-button.itch:hover { background-color: #fa4141; color: white; }
-.store-button.google { background-color: #4CAF50; }
-.store-button.google:hover { background-color: #45a049; color: white; }
+.store-button.itch:hover { background-color: #fa4141; color: #fff; }
+.store-button.google { background-color: #4caf50; }
+.store-button.google:hover { background-color: #45a049; color: #fff; }
 
+/* === Sekce Jazyky === */
 .language-list { list-style: none; padding: 0; }
 .language-list li { font-size: 1.1rem; margin-bottom: 0.5rem; }
 
-.footer-section {
-    width: 100%;
-    max-width: 900px;
-    padding: 2rem;
-    text-align: center;
-    border-top: 1px solid var(--border-color);
-    margin-top: 2rem;
-}
+/* === Patička === */
+.footer-section { width: 100%; max-width: 900px; padding: 2rem; text-align: center; border-top: 1px solid var(--border-color); margin-top: 2rem; }
 
-/* === NOVÉ A UPRAVENÉ STYLY PRO WIDGETY V PATIČCE === */
-.footer-widgets {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1.5rem; /* Větší mezera mezi widgety */
-    margin-bottom: 2.5rem;
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 .info-bar {
+    padding: 3px;
+    max-width: 600px;
+    margin: 0 auto 2.5rem auto;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.info-bar::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150%;
+    height: 150%;
+    z-index: 0;
+    background: conic-gradient(from 0deg, #92f6b1, #a9b1fb, #fbe97d, #ef84b7, #92f6b1);
+    transform-origin: center center;
+    transform: translate(-50%, -50%);
+    animation: spin 5s linear infinite;
+}
+
+.info-bar-content {
     background-color: #2a2a2a;
-    border: 1px solid var(--border-color);
     border-radius: 8px;
     padding: 1rem 1.5rem;
     display: flex;
@@ -197,52 +227,25 @@ a:hover {
     align-items: center;
     flex-wrap: wrap;
     gap: 1.5rem;
-    margin-bottom: 2.5rem;
-    max-width: 600px; /* Omezení šířky pro lepší vzhled */
-    margin-left: auto;
-    margin-right: auto;
+    position: relative;
+    z-index: 1;
 }
 
-.info-item {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    font-size: 1rem;
-    font-weight: 500;
-}
+.info-item { display: flex; align-items: center; gap: .75rem; font-size: 1rem; font-weight: 500; }
+.info-item .icon { font-size: 1.6rem; line-height: 1; }
+.info-item .label { color: var(--secondary-text-color); }
+.info-separator { width: 1px; height: 25px; background-color: var(--border-color); z-index: 1; position: relative; }
 
-.info-item .icon {
-    font-size: 1.6rem;
-    line-height: 1;
-}
+.social-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; }
+.social-links a { margin: 0; padding: .5rem 1rem; border: 1px solid var(--accent-color); border-radius: 5px; transition: background-color .3s ease,color .3s ease; }
+.social-links a:hover { background-color: var(--accent-color); color: var(--bg-color); }
 
-.info-item .label {
-    color: var(--secondary-text-color);
-}
-
-.info-separator {
-    width: 1px;
-    height: 25px;
-    background-color: var(--border-color);
-}
-
-.social-links{display:flex;justify-content:center;flex-wrap:wrap;gap:1rem;margin-top:1.5rem}.social-links a{margin:0;padding:.5rem 1rem;border:1px solid var(--accent-color);border-radius:5px;transition:background-color .3s ease,color .3s ease}.social-links a:hover{background-color:var(--accent-color);color:var(--bg-color)}@media (max-width:768px){h1{font-size:2rem}h2{font-size:1.75rem}.container,.footer-section{padding:1.5rem}.content-section{padding:1.5rem}.info-bar{flex-direction:column;gap:1rem}.info-separator{display:none}}
-
-.social-links a {
-    margin: 0;
-    padding: 0.5rem 1rem;
-    border: 1px solid var(--accent-color);
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-.social-links a:hover {
-    background-color: var(--accent-color);
-    color: var(--bg-color);
-}
-
+/* === Responzivní design === */
 @media (max-width: 768px) {
     h1 { font-size: 2rem; }
     h2 { font-size: 1.75rem; }
     .container, .footer-section { padding: 1.5rem; }
     .content-section { padding: 1.5rem; }
+    .info-bar-content { flex-direction: column; gap: 1rem; }
+    .info-separator { display: none; }
 }
