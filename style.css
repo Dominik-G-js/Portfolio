@@ -153,22 +153,29 @@ a:hover {
     color: var(--pill-color-text-5);
 }
 
+#repo-card-placeholder {
+    background-color: #2a2a2a;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-top: 1.5rem;
+}
+.repo-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}.repo-header h3{margin:0;font-size:1.5rem}.repo-header a{text-decoration:none;color:var(--primary-text-color);transition:color .3s ease}.repo-header a:hover{color:var(--accent-color)}.repo-description{color:var(--secondary-text-color);margin-bottom:1.5rem;font-style:italic}.repo-stats{display:flex;flex-wrap:wrap;gap:1.5rem;padding-top:1rem;border-top:1px solid var(--border-color)}.stat-item{display:flex;align-items:center;gap:.5rem;font-size:1rem;font-weight:500}.stat-item i{font-size:1.25rem;color:var(--secondary-text-color)}.repo-footer{margin-top:1.5rem;font-size:.9rem;color:var(--secondary-text-color);text-align:right}.repo-readme{margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border-color);color:var(--secondary-text-color);line-height:1.7}.repo-readme h1,.repo-readme h2,.repo-readme h3{color:var(--primary-text-color);border-bottom:1px solid var(--border-color);padding-bottom:.5rem;margin-top:2rem;margin-bottom:1rem}.repo-readme p{margin-bottom:1rem}.repo-readme a{color:var(--accent-color)}.repo-readme ul,.repo-readme ol{padding-left:1.5rem;margin-bottom:1rem}.repo-readme li{margin-bottom:.5rem}.repo-readme code{background-color:var(--bg-color);padding:.2rem .4rem;border-radius:4px;font-family:'Courier New',Courier,monospace;font-size:.9rem}.repo-readme pre{background-color:var(--bg-color);padding:1rem;border-radius:5px;overflow-x:auto}.repo-readme pre code{padding:0;background-color:transparent}
+
+/* === Weather Widget Styles === */
 #weather-widget {
     background-color: #2a2a2a;
     border: 1px solid var(--border-color);
     border-radius: 8px;
     padding: 0.75rem 1.5rem;
-    display: inline-flex; /* Zobrazí se jako malý box */
+    display: inline-flex;
     align-items: center;
     gap: 1rem;
     margin-bottom: 2rem;
     font-size: 1rem;
     font-weight: 500;
 }
-
-#weather-widget .weather-icon {
-    font-size: 1.8rem;
-}
+#weather-widget .weather-icon { font-size: 1.8rem; }
 
 .accordion { margin-top: 1.5rem; }
 .accordion-item { border-bottom: 1px solid var(--border-color); }
