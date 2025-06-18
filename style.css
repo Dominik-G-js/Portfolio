@@ -226,14 +226,8 @@ a:hover {
     background-color: var(--border-color);
 }
 
-/* Odkaz na sociální sítě */
-.social-links {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 1.5rem;
-}
+.social-links{display:flex;justify-content:center;flex-wrap:wrap;gap:1rem;margin-top:1.5rem}.social-links a{margin:0;padding:.5rem 1rem;border:1px solid var(--accent-color);border-radius:5px;transition:background-color .3s ease,color .3s ease}.social-links a:hover{background-color:var(--accent-color);color:var(--bg-color)}@media (max-width:768px){h1{font-size:2rem}h2{font-size:1.75rem}.container,.footer-section{padding:1.5rem}.content-section{padding:1.5rem}.info-bar{flex-direction:column;gap:1rem}.info-separator{display:none}}
+
 .social-links a {
     margin: 0;
     padding: 0.5rem 1rem;
