@@ -137,7 +137,7 @@ a:hover {
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
-    margin-top: auto; /* Posune štítky na spodek, pokud je místo */
+    margin-top: auto;
 }
 
 .skill-category li {
@@ -202,6 +202,7 @@ a:hover {
     border-radius: 10px;
     position: relative;
     overflow: hidden;
+    background-color: #2a2a2a; /* Přidáno pozadí pro případ, že by se gradient načítal pomalu */
 }
 
 .info-bar::before {
@@ -209,13 +210,19 @@ a:hover {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 150%;
-    height: 150%;
-    z-index: 0;
-    background: conic-gradient(from 0deg, #92f6b1, #a9b1fb, #fbe97d, #ef84b7, #92f6b1);
+    width: 300%;  /* Zvětšeno pro pokrytí rohů */
+    height: 300%; /* Zvětšeno pro pokrytí rohů */
+    z-index: 1;
+    background: conic-gradient(
+        from 0deg,
+        transparent 0%,
+        transparent 85%,
+        #a9b1fb 95%,
+        #92f6b1 100%
+    );
     transform-origin: center center;
     transform: translate(-50%, -50%);
-    animation: spin 5s linear infinite;
+    animation: spin 4s linear infinite;
 }
 
 .info-bar-content {
@@ -228,13 +235,13 @@ a:hover {
     flex-wrap: wrap;
     gap: 1.5rem;
     position: relative;
-    z-index: 1;
+    z-index: 2; /* Musí být nad pseudo-elementem */
 }
 
 .info-item { display: flex; align-items: center; gap: .75rem; font-size: 1rem; font-weight: 500; }
 .info-item .icon { font-size: 1.6rem; line-height: 1; }
 .info-item .label { color: var(--secondary-text-color); }
-.info-separator { width: 1px; height: 25px; background-color: var(--border-color); z-index: 1; position: relative; }
+.info-separator { width: 1px; height: 25px; background-color: var(--border-color); z-index: 2; position: relative; }
 
 .social-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; }
 .social-links a { margin: 0; padding: .5rem 1rem; border: 1px solid var(--accent-color); border-radius: 5px; transition: background-color .3s ease,color .3s ease; }
