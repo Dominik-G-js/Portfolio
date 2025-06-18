@@ -135,74 +135,91 @@ a:hover {
 
 .games-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
     margin-top: 1.5rem;
 }
 
-.game-widget-card {
+.game-card {
     background-color: #2a2a2a;
     border: 1px solid var(--border-color);
     border-radius: 8px;
-    padding: 1rem;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.itch-io-widget iframe {
-    display: block;
-    max-width: 100%;
-    min-height: 167px;
-    border: none;
-    margin: 0 auto;
-}
-
-.google-play-card {
     display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 1.5rem;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.game-icon {
-    width: 100px;
-    height: 100px;
-    border-radius: 20px;
-    flex-shrink: 0;
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.game-preview {
+    background-color: #121212;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 170px;
+}
+
+.game-preview iframe {
+    display: block;
+    width: 100%;
+    border: none;
+}
+
+.game-preview .game-icon {
+    width: 120px;
+    height: 120px;
+    border-radius: 22px;
 }
 
 .game-info {
+    padding: 1.5rem;
+    text-align: center;
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
 }
 
 .game-info h3 {
-    margin: 0 0 0.25rem 0;
-    color: var(--primary-text-color);
+    margin-top: 0;
+    margin-bottom: 1rem;
 }
 
-.developer-name {
-    color: var(--secondary-text-color);
-    margin: 0 0 1rem 0;
-    font-size: 0.9rem;
+.game-links {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
 }
 
 .store-button {
     display: inline-block;
-    background-color: var(--accent-color);
     color: white;
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1rem;
     border-radius: 5px;
     text-align: center;
     font-weight: 600;
-    align-self: flex-start;
     transition: background-color 0.3s ease;
+    border: none;
 }
 
-.store-button:hover {
-    background-color: #0056b3;
-    color: white;
+.store-button.itch {
+    background-color: #fa5c5c;
 }
+.store-button.itch:hover {
+    background-color: #fa4141;
+}
+
+.store-button.google {
+    background-color: #4CAF50;
+}
+.store-button.google:hover {
+    background-color: #45a049;
+}
+
 
 .footer-section {
     width: 100%;
@@ -246,14 +263,5 @@ a:hover {
     .social-links a {
         display: block;
         margin: 0.5rem 0;
-    }
-
-    .google-play-card {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .game-info {
-        align-items: center;
     }
 }
