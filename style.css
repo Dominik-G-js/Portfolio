@@ -135,50 +135,73 @@ a:hover {
 
 .games-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: 1fr;
     gap: 1.5rem;
     margin-top: 1.5rem;
 }
 
-.game-card {
+.game-widget-card {
     background-color: #2a2a2a;
-    border-radius: 8px;
-    padding: 1.5rem;
     border: 1px solid var(--border-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+    padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.game-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+.itch-io-widget iframe {
+    display: block;
+    max-width: 100%;
+    min-height: 167px;
+    border: none;
+    margin: 0 auto;
 }
 
-.game-card h3 {
-    margin-top: 0;
-    margin-bottom: 1rem;
-    color: var(--accent-color);
-}
-
-.game-platforms {
+.google-play-card {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
 }
 
-.platform-link {
-    background-color: var(--bg-color);
+.game-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    flex-shrink: 0;
+}
+
+.game-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.game-info h3 {
+    margin: 0 0 0.25rem 0;
     color: var(--primary-text-color);
-    padding: 0.25rem 0.75rem;
-    border-radius: 15px;
-    font-size: 0.9rem;
-    border: 1px solid var(--accent-color);
-    transition: background-color 0.3s, color 0.3s;
 }
 
-.platform-link:hover {
+.developer-name {
+    color: var(--secondary-text-color);
+    margin: 0 0 1rem 0;
+    font-size: 0.9rem;
+}
+
+.store-button {
+    display: inline-block;
     background-color: var(--accent-color);
-    color: var(--bg-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 600;
+    align-self: flex-start;
+    transition: background-color 0.3s ease;
+}
+
+.store-button:hover {
+    background-color: #0056b3;
+    color: white;
 }
 
 .footer-section {
@@ -223,5 +246,14 @@ a:hover {
     .social-links a {
         display: block;
         margin: 0.5rem 0;
+    }
+
+    .google-play-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .game-info {
+        align-items: center;
     }
 }
