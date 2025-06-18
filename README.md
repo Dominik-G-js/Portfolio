@@ -4,11 +4,11 @@
 
 Toto je repozitář pro můj osobní vývojářský web, který slouží jako živé portfolio mých dovedností, zkušeností a projektů. Web je postaven od nuly a je navržen tak, aby byl čistý, moderní a plně responzivní.
 
-**[➡️ Zobrazit živou verzi portfolia](https://ZDE_VLOZ_ODKAZ_NA_SVUJ_WEB.pages.dev)**
+**➡️ Zobrazit živou verzi portfolia: [dominik-g.pages.dev](https://dominik-g.pages.dev/)**
 
 ## O projektu
 
-Cílem tohoto projektu bylo vytvořit elegantní jednostránkové portfolio, které efektivně prezentuje mé schopnosti potenciálním zaměstnavatelům. Stránka je navržena s důrazem na přehlednost, moderní design (dark mode) a interaktivitu, která demonstruje praktické využití JavaScriptu.
+Cílem tohoto projektu bylo vytvořit elegantní jednostránkové portfolio, které efektivně prezentuje mé schopnosti potenciálním zaměstnavatelům. Stránka je navržena s důrazem na přehlednost, moderní design (dark mode) a interaktivitu, která demonstruje praktické využití JavaScriptu pro práci s externími API.
 
 Celý projekt je hostován na **Cloudflare Pages**, což zaručuje vysokou rychlost a spolehlivost po celém světě.
 
@@ -20,15 +20,16 @@ Tento web byl postaven s využitím následujících technologií:
 * **CSS3:** Pro veškerý styling, včetně:
     * **Flexbox** a **Grid** pro moderní a responzivní layout.
     * **CSS proměnné** pro snadnou údržbu a konzistentní design.
-    * **Responzivní design** s využitím media queries pro perfektní zobrazení na mobilech, tabletech i desktopech.
-* **JavaScript (ES6+):** Pro veškerou interaktivitu a dynamické funkce.
+    * **CSS Animace** (`@keyframes`) pro interaktivní efekty.
+* **JavaScript (ES6+):** Pro veškerou interaktivitu a dynamické funkce, včetně asynchronních `fetch` požadavků.
+* **Open-Meteo API:** Pro zobrazení aktuálních dat o počasí bez nutnosti API klíče.
+* **CoinGecko API:** Pro zobrazení aktuální ceny Bitcoinu bez nutnosti API klíče.
 * **Cloudflare Pages:** Pro bleskurychlý a bezplatný hosting statického webu.
-* **Devicon:** Pro zobrazení ikon technologií.
-* **marked.js:** Pro klientský převod Markdownu (README) na HTML.
 
 ## Zajímavé funkce
 
-* **Dynamické načítání z GitHub API:** Sekce "Live Project from GitHub" v reálném čase stahuje data o tomto repozitáři (včetně tohoto `README.md` souboru) a zobrazuje je na stránce.
+* **Živé API Widgety:** Patička stránky obsahuje informační lištu, která v reálném čase zobrazuje aktuální počasí v Ostravě a současnou cenu Bitcoinu v Kč.
+* **Neonová animace:** Informační lišta v patičce má vlastní CSS animaci, která vytváří efekt rotujícího neonového rámečku.
 * **Interaktivní akordeon:** Sekce s pracovními zkušenostmi na webech používá rozbalovací seznam pro přehledné zobrazení detailů.
 * **Animace při scrollu:** Jednotlivé sekce se plynule objevují při posouvání stránky díky využití `Intersection Observer API`.
 * **Moderní design:** Čisté, responzivní UI s konzistentním barevným schématem a typografií.
