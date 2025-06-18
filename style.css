@@ -177,6 +177,23 @@ a:hover {
 }
 #weather-widget .weather-icon { font-size: 1.8rem; }
 
+
+#btc-price-widget .btc-icon {
+    font-size: 1.8rem;
+}
+
+#btc-price-widget .btc-icon i {
+    color: #f7931a; /* Oranžová barva Bitcoinu */
+}
+
+.footer-widgets {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Pokud by se nevešly, zalamují se pod sebe */
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
 .accordion { margin-top: 1.5rem; }
 .accordion-item { border-bottom: 1px solid var(--border-color); }
 .accordion-item:last-child { border-bottom: none; }
