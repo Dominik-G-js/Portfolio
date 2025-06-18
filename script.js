@@ -26,10 +26,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Funkce pro načtení počasí
+   
+    // Funkce pro načtení počasí (zůstává stejná)
     async function fetchWeather() {
         const widget = document.getElementById('weather-widget');
-        if (!widget) return; // Pokud widget na stránce není, nic nedělej
+        if (!widget) return;
         const lat = 49.83, lon = 18.28;
         const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,weather_code`;
         try {
@@ -40,50 +41,52 @@ document.addEventListener('DOMContentLoaded', () => {
             const weatherIcon = getWeatherIcon(data.current.weather_code);
             widget.innerHTML = `<span class="weather-location">Ostrava:</span><span class="weather-temp">${temperature}°C</span><span class="weather-icon">${weatherIcon}</span>`;
         } catch (error) {
-            widget.innerHTML = `<p>Weather data currently unavailable.</p>`;
+            widget.innerHTML = `<p>Weather data unavailable.</p>`;
             console.error('Failed to fetch weather data:', error);
         }
     }
     
-    // Funkce pro načtení dat z GitHubu
-    async function fetchRepoData() {
-        const placeholder = document.getElementById('repo-card-placeholder');
-        if (!placeholder) return; // Pokud placeholder na stránce není, nic nedělej
-        const username = 'Dominik-G-js', repoName = 'Portfolio';
-        const repoUrl = `https://api.github.com/repos/${username}/${repoName}`;
-        const readmeUrl = `https://api.github.com/repos/${username}/${repoName}/readme`;
-        const headers = new Headers();
-        if (typeof GITHUB_TOKEN !== 'undefined') {
-            headers.append('Authorization', `token ${GITHUB_TOKEN}`);
-        }
+    // NOVÁ FUNKCE PRO NAČTENÍ CENY BITCOINU
+    async function fetchBtcPrice() {
+        const widget = document.getElementById('btc-price-widget');
+        if (!widget) return;
+        const url = 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd,czk';
+
         try {
-            const [repoResponse, readmeResponse] = await Promise.all([fetch(repoUrl, { headers }), fetch(readmeUrl, { headers })]);
-            if (!repoResponse.ok) throw new Error(`Repo fetch failed: ${repoResponse.status}`);
-            const repoData = await repoResponse.json();
-            let readmeHTML = '';
-            if (readmeResponse.ok) {
-                const readmeData = await readmeResponse.json();
-                const readmeMarkdown = atob(readmeData.content);
-                readmeHTML = marked.parse(readmeMarkdown);
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error('Bitcoin price data not available');
             }
-            const lastUpdated = new Date(repoData.updated_at).toLocaleDateString('cs-CZ', {day:'numeric',month:'long',year:'numeric'});
-            placeholder.innerHTML = `<div class="repo-header"><h3><a href="${repoData.html_url}" target="_blank" rel="noopener noreferrer">${repoData.name}</a></h3></div><p class="repo-description">${repoData.description||'No description provided.'}</p><div class="repo-stats"><div class="stat-item"><i class="devicon-star-plain"></i><span>${repoData.stargazers_count} Stars</span></div><div class="stat-item"><i class="devicon-git-plain"></i><span>${repoData.forks_count} Forks</span></div><div class="stat-item"><span style="color: ${getLanguageColor(repoData.language)}; font-size: 1.5rem;">●</span><span>${repoData.language}</span></div></div><div class="repo-footer">Last updated: ${lastUpdated}</div>${readmeHTML?`<div class="repo-readme">${readmeHTML}</div>`:''}`;
+            const data = await response.json();
+
+            const priceCzk = data.bitcoin.czk;
+
+            // Formátování čísla pro lepší čitelnost (např. 1 500 000 Kč)
+            const formatter = new Intl.NumberFormat('cs-CZ', {
+                style: 'currency',
+                currency: 'CZK',
+                maximumFractionDigits: 0 // Bez desetinných míst
+            });
+
+            const btcHTML = `
+                <span class="btc-icon"><i class="devicon-bitcoin-plain"></i></span>
+                <span class="btc-price">${formatter.format(priceCzk)}</span>
+            `;
+
+            widget.innerHTML = btcHTML;
+
         } catch (error) {
-            placeholder.innerHTML = `<p style="color: #ff8a8a;">Failed to load project data from GitHub. This might be due to an invalid token or API rate limits.</p>`;
-            console.error('There was a problem fetching the repo data:', error);
+            widget.innerHTML = `<p>BTC price unavailable.</p>`;
+            console.error('Failed to fetch BTC price:', error);
         }
     }
 
+    // Pomocné funkce (zůstávají stejné)
     function getWeatherIcon(code) {
         if (code === 0) return '☀️'; if (code === 1) return '🌤️'; if (code === 2) return '🌥️'; if (code === 3) return '☁️'; if (code >= 51 && code <= 67) return '🌧️'; if (code >= 71 && code <= 77) return '❄️'; if (code >= 80 && code <= 82) return '🌦️'; if (code >= 95 && code <= 99) return '⛈️'; return '🌍';
     }
     
-    function getLanguageColor(language) {
-        const colors = {"JavaScript":"#f1e05a","HTML":"#e34c26","CSS":"#563d7c","Python":"#3572A5","PHP":"#4F5D95","Vue":"#4FC08D"};
-        return colors[language] || '#cccccc';
-    }
-
-    // Zavolání obou funkcí
+    // Zavolání VŠECH funkcí
     fetchWeather();
-    fetchRepoData();
+    fetchBtcPrice();
 });
