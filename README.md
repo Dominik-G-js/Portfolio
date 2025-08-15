@@ -4,7 +4,7 @@
 
 Toto je repozitář pro můj osobní vývojářský web, který slouží jako živé portfolio mých dovedností, zkušeností a projektů. Web je postaven od nuly a je navržen tak, aby byl čistý, moderní a plně responzivní.
 
-**➡️ Zobrazit živou verzi portfolia: [dominik-g.pages.dev](https://dominik-g.pages.dev/)**
+**➡️ Zobrazit: [dominik-g.pages.dev](https://dominik-g.pages.dev/)**
 
 ## O projektu
 
