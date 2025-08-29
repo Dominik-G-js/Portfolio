@@ -6,8 +6,8 @@
     --accent-color: #007bff;
     --border-color: #333;
     --shadow-color: rgba(0, 0, 0, 0.5);
-    
-    /* Barvy pro štítky dovedností */
+
+    /* Skill pill colors */
     --pill-color-1: rgba(88, 101, 242, 0.2);
     --pill-color-text-1: #a9b1fb;
     --pill-color-2: rgba(87, 242, 135, 0.2);
@@ -20,7 +20,6 @@
     --pill-color-text-5: #84bdef;
 }
 
-/* === Základní styly === */
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--bg-color);
@@ -68,7 +67,6 @@ a:hover {
     color: #4da3ff;
 }
 
-/* === Hlavní sekce a animace === */
 .content-section {
     background-color: var(--card-color);
     border: 1px solid var(--border-color);
@@ -76,32 +74,16 @@ a:hover {
     padding: 2rem;
     margin-bottom: 2rem;
     box-shadow: 0 4px 15px var(--shadow-color);
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-.content-section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* === Sekce Zkušenosti === */
-.experience-item {
-    margin-bottom: 1.5rem;
-}
-
-.experience-item h3 {
-    margin-bottom: 0.25rem;
-}
-
+.experience-item { margin-bottom: 1.5rem; }
+.experience-item h3 { margin-bottom: 0.25rem; }
 .experience-item .company-details {
     color: var(--secondary-text-color);
     font-style: italic;
     margin-bottom: 0.5rem;
 }
 
-/* === Sekce Dovednosti === */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -114,8 +96,6 @@ a:hover {
     border-radius: 8px;
     border: 1px solid var(--border-color);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
 }
 
 .skill-category:hover {
@@ -125,7 +105,6 @@ a:hover {
 
 .skill-category h3 {
     color: var(--accent-color);
-    margin-top: 0;
     margin-bottom: 1.5rem;
     font-size: 1.2rem;
 }
@@ -137,7 +116,6 @@ a:hover {
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
-    margin-top: auto;
 }
 
 .skill-category li {
@@ -153,106 +131,94 @@ a:hover {
 .skill-category ul li:nth-child(5n + 4) { background-color: var(--pill-color-4); color: var(--pill-color-text-4); }
 .skill-category ul li:nth-child(5n + 5) { background-color: var(--pill-color-5); color: var(--pill-color-text-5); }
 
-/* === Sekce Projekty (Akordeon) === */
 .accordion { margin-top: 1.5rem; }
 .accordion-item { border-bottom: 1px solid var(--border-color); }
-.accordion-item:last-child { border-bottom: none; }
-.accordion-header { background-color: transparent; color: var(--primary-text-color); cursor: pointer; padding: 1.25rem 1rem; width: 100%; border: none; text-align: left; outline: none; font-size: 1.1rem; font-weight: 600; transition: background-color .3s ease; position: relative; padding-right: 3rem; }
-.accordion-header:hover { background-color: #2a2a2a; }
-.accordion-header::after { content: '+'; font-size: 1.5rem; color: var(--accent-color); position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); transition: transform .3s ease; }
-.accordion-header.active::after { content: '−'; transform: translateY(-50%) rotate(180deg); }
-.accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; background-color: #2a2a2a; }
-.accordion-content-inner { padding: 1rem 2rem 1.5rem 2rem; }
-.accordion-content-inner ul { padding: 0 0 0 1.5rem; margin: 0; color: var(--secondary-text-color); }
-.accordion-content-inner ul li { margin-bottom: 0.5rem; }
-.visit-website-button { display: inline-block; background-color: var(--accent-color); color: #fff; padding: .5rem 1.25rem; border-radius: 5px; font-weight: 500; margin-top: 1.25rem; text-decoration: none; transition: background-color .3s ease; }
-.visit-website-button:hover { background-color: #0056b3; color: #fff; }
+.accordion-header {
+    background: transparent;
+    color: var(--primary-text-color);
+    cursor: pointer;
+    padding: 1.25rem 1rem;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    position: relative;
+    padding-right: 3rem;
+}
+.accordion-header::after {
+    content: '+';
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.accordion-header.active::after { content: '−'; }
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: #2a2a2a;
+}
+.accordion-content-inner { padding: 1rem 2rem 1.5rem; }
+.accordion-content-inner ul { color: var(--secondary-text-color); }
+.visit-website-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: .5rem 1.25rem;
+    border-radius: 5px;
+    font-weight: 500;
+    margin-top: 1.25rem;
+    transition: background-color .3s ease;
+}
+.visit-website-button:hover { background-color: #0056b3; }
 
-/* === Sekce Hry === */
-.games-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(320px,1fr)); gap: 2rem; margin-top: 1.5rem; }
-.game-card { background-color: #2a2a2a; border: 1px solid var(--border-color); border-radius: 8px; display: flex; flex-direction: column; overflow: hidden; transition: transform .3s ease,box-shadow .3s ease; }
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.game-card {
+    background-color: #2a2a2a;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
 .game-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,.6); }
-.game-preview { background-color: #121212; display: flex; justify-content: center; align-items: center; min-height: 170px; padding: 1rem; }
-.game-preview .game-icon { width: 120px; height: 120px; border-radius: 22px; }
-.game-info { padding: 1.5rem; text-align: center; display: flex; flex-direction: column; flex-grow: 1; }
-.game-info h3 { margin-top: 0; margin-bottom: 1rem; }
-.game-links { margin-top: auto; display: flex; flex-direction: column; gap: .75rem; }
-.store-button { display: inline-block; color: #fff; padding: .6rem 1rem; border-radius: 5px; text-align: center; font-weight: 600; transition: background-color .3s ease; border: none; text-decoration: none; }
-.store-button.itch { background-color: #fa5c5c; }
-.store-button.itch:hover { background-color: #fa4141; color: #fff; }
-.store-button.google { background-color: #4caf50; }
-.store-button.google:hover { background-color: #45a049; color: #fff; }
 
-/* === Sekce Jazyky === */
+.game-preview { background-color: #121212; display: flex; justify-content: center; align-items: center; min-height: 170px; padding: 1rem; }
+
+.game-preview .game-icon { width: 120px; height: 120px; border-radius: 22px; }
+
+.game-info { padding: 1.5rem; text-align: center; display: flex; flex-direction: column; flex-grow: 1; }
+
+.game-links { margin-top: auto; display: flex; flex-direction: column; gap: .75rem; }
+.store-button { color: #fff; padding: .6rem 1rem; border-radius: 5px; font-weight: 600; text-align: center; text-decoration: none; }
+.store-button.itch { background-color: #fa5c5c; }
+.store-button.google { background-color: #4caf50; }
+
 .language-list { list-style: none; padding: 0; }
 .language-list li { font-size: 1.1rem; margin-bottom: 0.5rem; }
 
-/* === Patička === */
-.footer-section { width: 100%; max-width: 900px; padding: 2rem; text-align: center; border-top: 1px solid var(--border-color); margin-top: 2rem; }
-
-@keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-.info-bar {
-    padding: 3px;
-    max-width: 600px;
-    margin: 0 auto 2.5rem auto;
-    border-radius: 10px;
-    position: relative;
-    overflow: hidden;
-    background-color: #2a2a2a; /* Přidáno pozadí pro případ, že by se gradient načítal pomalu */
-}
-
-.info-bar::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 300%;  /* Zvětšeno pro pokrytí rohů */
-    height: 300%; /* Zvětšeno pro pokrytí rohů */
-    z-index: 1;
-    background: conic-gradient(
-        from 0deg,
-        transparent 0%,
-        transparent 85%,
-        #a9b1fb 95%,
-        #92f6b1 100%
-    );
-    transform-origin: center center;
-    transform: translate(-50%, -50%);
-    animation: spin 4s linear infinite;
-}
-
-.info-bar-content {
-    background-color: #2a2a2a;
-    border-radius: 8px;
-    padding: 1rem 1.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    position: relative;
-    z-index: 2; /* Musí být nad pseudo-elementem */
-}
-
-.info-item { display: flex; align-items: center; gap: .75rem; font-size: 1rem; font-weight: 500; }
-.info-item .icon { font-size: 1.6rem; line-height: 1; }
-.info-item .label { color: var(--secondary-text-color); }
-.info-separator { width: 1px; height: 25px; background-color: var(--border-color); z-index: 2; position: relative; }
+.footer-section { max-width: 900px; padding: 2rem; text-align: center; border-top: 1px solid var(--border-color); margin-top: 2rem; }
 
 .social-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; }
-.social-links a { margin: 0; padding: .5rem 1rem; border: 1px solid var(--accent-color); border-radius: 5px; transition: background-color .3s ease,color .3s ease; }
+.social-links a { padding: .5rem 1rem; border: 1px solid var(--accent-color); border-radius: 5px; }
 .social-links a:hover { background-color: var(--accent-color); color: var(--bg-color); }
 
-/* === Responzivní design === */
 @media (max-width: 768px) {
     h1 { font-size: 2rem; }
     h2 { font-size: 1.75rem; }
     .container, .footer-section { padding: 1.5rem; }
     .content-section { padding: 1.5rem; }
-    .info-bar-content { flex-direction: column; gap: 1rem; }
-    .info-separator { display: none; }
 }
