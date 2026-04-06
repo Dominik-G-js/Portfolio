@@ -1,291 +1,443 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dominik Gomboš – Developer Portfolio</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-    <link rel="stylesheet" href="style.css">
+    <title>Dominik Gomboš | Fullstack Developer & AI Engineer</title>
+    <meta name="description" content="Fullstack webový vývojář a AI engineer se zaměřením na e-commerce a automatizaci. 5+ let zkušeností, 20+ e-shopů.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <main class="container">
-        <header class="header-section">
-            <h1>Dominik Gomboš – Developer Portfolio ✨</h1>
-        </header>
+    <!-- Neural Network Canvas Background -->
+    <canvas id="neural-bg"></canvas>
 
-        <section id="about" class="content-section">
-            <h2>About Me 👋</h2>
-            <p>I am an independent and technically strong web developer with over 3 years of experience in e-commerce, custom web development, and API integrations. I have completed 20+ live e-shops (migration from PrestaShop, Shoptet, WooCommerce to Upgates/WordPress), handling complete frontend and backend development and deployment—from analysis to live operation.  
-    My approach: I manage entire projects end-to-end—client communication, analysis, development, optimization, deployment, and long-term maintenance.</p>
-        </section>
-
-        <section id="experience" class="content-section">
-            <h2>Work Experience 💼</h2>
-            <div class="experience-item">
-                <h3>Programmer</h3>
-                <p class="company-details">Webdevel s.r.o., Ostrava, CZ | December 2022 – Present (Expected End: March 2025)</p>
-                <p>I worked on developing and managing complex e-commerce solutions on the Upgates and WordPress (WooCommerce) platforms. I handled complete frontend and backend development, including template implementation in Latte/Nette, JavaScript (including AJAX), and modern CSS.  
-        My main tasks included migrating e-shops from platforms like PrestaShop, Shoptet, or WooCommerce to Upgates/WordPress, including transferring complete databases—products, customers, orders, hosting, domains, and databases.  
-        I implemented custom functions, connected external APIs, adjusted admin interfaces, and optimized speed and SEO. My work also involved direct client communication—both online and via email—including requirement analysis, solution design, and estimating the time needed for custom adjustments.  
-        I managed projects from analysis through development to live deployment.</p>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#hero" class="nav-logo">DG<span class="accent">.</span></a>
+            <div class="nav-links">
+                <a href="#about">O mně</a>
+                <a href="#skills">Skills</a>
+                <a href="#experience">Zkušenosti</a>
+                <a href="#projects">Projekty</a>
+                <a href="#contact">Kontakt</a>
             </div>
-            <div class="experience-item">
-                <h3>Junior Programmer</h3>
-                <p class="company-details">Webdevel s.r.o., Ostrava, CZ | March 2019 – December 2020</p>
-                <p>Contributed to various web development projects, assisting senior developers with coding, debugging, and implementing new features to enhance application functionality.</p>
-            </div>
-        </section>
-
-        <section id="additional-info" class="content-section">
-    <h2>Additional Information ℹ️</h2>
-    <p>I am an independent and technically strong web developer with over 3 years of experience in e-commerce, game development, and AI engineering.  
-    In my previous role, I acted as a complete “one-man army”—communicating directly with clients, analyzing requirements, estimating changes, and handling their frontend and backend implementation (Upgates, WordPress, Nette, Latte, JS, AJAX, CSS).  
-    I have extensive experience with e-shop migrations (PrestaShop, Shoptet, WooCommerce to Upgates/WordPress), database transfers, hosting, and migrating customer and product data.  
-    I am also actively involved in AI engineering—from prompt tuning for maximum output quality, creating custom AI agents, to integrating AI into real products.  
-    In my free time, I develop games in Unity (C#) and also focus on online marketing, SEO optimization, and copywriting—especially creating effective SEO product descriptions and overall strategies to grow e-shops.</p>
-</section>
-
-        <section id="skills" class="content-section">
-            <h2>Technical Proficiency 💻</h2>
-            <p>Here are some of the technologies and tools I work with:</p>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Frontend</h3>
-                    <ul>
-                        <li>JavaScript</li>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>Vue.js</li>
-                        <li>AJAX (Basics)</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Backend</h3>
-                    <ul>
-                        <li>PHP (Basics)</li>
-                        <li>Laravel</li>
-                        <li>Node.js</li>
-                        <li>Nette</li>
-                        <li>Latte (Basics)</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>CMS & E-commerce</h3>
-                    <ul>
-                        <li>WordPress</li>
-                        <li>Upgates</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Databases</h3>
-                    <ul>
-                        <li>SQL</li>
-                        <li>MySQL</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Other Skills</h3>
-                    <ul>
-                        <li>Python</li>
-                        <li>Excel</li>
-                        <li>Word</li>
-                        <li>Unity</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="content-section">
-            <h2>Websites I've Worked On 🌐</h2>
-            <p>Here are some of the websites where I have contributed my development skills. Click on each project to see the details.</p>
-            <div class="accordion">
-                <div class="accordion-item">
-                    <button class="accordion-header">e-abctiskarna.cz</button>
-                    <div class="accordion-content">
-                        <div class="accordion-content-inner">
-                            <ul>
-                                <li>Led a complete overhaul of frontend components and homepage design.</li>
-                                <li>Engineered and implemented a new custom product configurator.</li>
-                                <li>Developed a server-side solution for data and image uploads and storage.</li>
-                                <li>Handled significant graphic design tasks and the full operational setup of the e-shop.</li>
-                            </ul>
-                            <a href="https://e-abctiskarna.cz" target="_blank" class="visit-website-button">Visit Website ↗</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <button class="accordion-header">vop.cz</button>
-                    <div class="accordion-content">
-                        <div class="accordion-content-inner">
-                            <ul>
-                                <li>Rebuilt a WordPress theme from the ground up according to precise graphic specifications.</li>
-                                <li>Managed the entire website setup and implemented multilingual translations.</li>
-                            </ul>
-                            <a href="https://vop.cz" target="_blank" class="visit-website-button">Visit Website ↗</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <button class="accordion-header">rynek.club</button>
-                    <div class="accordion-content">
-                        <div class="accordion-content-inner">
-                            <ul>
-                                <li>Implemented frontend components for data listings.</li>
-                                <li>Added multilingual translations.</li>
-                            </ul>
-                            <a href="https://rynek.club" target="_blank" class="visit-website-button">Visit Website ↗</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <button class="accordion-header">blasercafe-czech.cz</button>
-                    <div class="accordion-content">
-                        <div class="accordion-content-inner">
-                            <ul>
-                                <li>Contributed to various frontend development tasks.</li>
-                            </ul>
-                            <a href="https://blasercafe-czech.cz" target="_blank" class="visit-website-button">Visit Website ↗</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <button class="accordion-header">nemovitosti.ovajih.cz</button>
-                    <div class="accordion-content">
-                        <div class="accordion-content-inner">
-                            <ul>
-                                <li>Modified and improved the filtering system.</li>
-                                <li>Implemented graphical changes and updates.</li>
-                            </ul>
-                            <a href="https://nemovitosti.ovajih.cz" target="_blank" class="visit-website-button">Visit Website ↗</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <button class="accordion-header">shopfix.cz</button>
-                    <div class="accordion-content">
-                        <div class="accordion-content-inner">
-                            <ul>
-                                <li>Managed the complete launch and initial setup of the project.</li>
-                            </ul>
-                            <a href="https://shopfix.cz" target="_blank" class="visit-website-button">Visit Website ↗</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- New section: More references -->
-        <section id="references" class="content-section">
-            <h2>More References 🔗</h2>
-            <p>A simple list of websites where I worked on changes or contributed to projects:</p>
-            <ul class="references-list">
-                <li><a href="https://www.mexta.cz/" target="_blank">mexta.cz</a></li>
-                <li><a href="https://www.nasport.cz/" target="_blank">nasport.cz</a></li>
-                <li><a href="https://www.drevo-albre.cz/" target="_blank">drevo-albre.cz</a></li>
-                <li><a href="https://www.jakama-ge.sk/" target="_blank">jakama-ge.sk</a></li>
-                <li><a href="https://generalfactory.cz/" target="_blank">generalfactory.cz</a></li>
-                <li><a href="https://www.weburny.cz/" target="_blank">weburny.cz</a></li>
-                <li><a href="https://www.blasercafe-czech.cz/" target="_blank">blasercafe-czech.cz</a></li>
-                <li><a href="https://www.zvarmetal.sk/" target="_blank">zvarmetal.sk</a></li>
-                <li><a href="https://www.panvicky.cz/" target="_blank">panvicky.cz</a></li>
-                <li><a href="https://eshop.motomodrice.cz/" target="_blank">eshop.motomodrice.cz</a></li>
-                <li><a href="https://www.solar-market.cz/" target="_blank">solar-market.cz</a></li>
-                <li><a href="https://www.shoei.cz/" target="_blank">shoei.cz</a></li>
-                <li><a href="https://www.wereco.store/" target="_blank">wereco.store</a></li>
-                <li><a href="https://www.e-abctiskarna.cz/" target="_blank">e-abctiskarna.cz</a></li>
-                <li><a href="https://www.tasteofasia.cz/" target="_blank">tasteofasia.cz</a></li>
-                <li><a href="https://www.olzatex.cz/" target="_blank">olzatex.cz</a></li>
-                <li><a href="https://www.isvetreklamy.cz/" target="_blank">isvetreklamy.cz</a></li>
-                <li><a href="https://www.malvinka.cz/" target="_blank">malvinka.cz</a></li>
-                <li><a href="https://www.bodycondition.sk/" target="_blank">bodycondition.sk</a></li>
-                <li><a href="https://www.e-pribory.cz/" target="_blank">e-pribory.cz</a></li>
-                <li><a href="https://www.halvarssons-lindstrands.cz/" target="_blank">halvarssons-lindstrands.cz</a></li>
-                <li><a href="https://www.bimo.cz/" target="_blank">bimo.cz</a></li>
-                <li><a href="https://www.florbal4u.com/" target="_blank">florbal4u.com</a></li>
-            </ul>
-        </section>
-
-        <section id="games" class="content-section">
-            <h2>Game Development Projects 🎮</h2>
-            <p>Here are the games I have developed, primarily using Unity.</p>
-            <div class="games-grid">
-                
-                <div class="game-card">
-                    <div class="game-preview">
-                        <img src="images/sahur-pack-icon.png" alt="sahur-pack-icon" class="game-icon">
-                    </div>
-                    <div class="game-info">
-                        <h3>Sahur Pack</h3>
-                        <div class="game-links">
-                            <a href="https://toxic-pastika-04.itch.io/sahur-pack" target="_blank" class="store-button itch">View on itch.io</a>
-                            <a href="https://play.google.com/store/apps/details?id=com.ToxicSahur.SahurPack" target="_blank" class="store-button google">Get on Google Play</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="game-card">
-                    <div class="game-preview">
-                        <img src="images/tung-gate-run-icon.png" alt="Tung Gate Run Icon" class="game-icon">
-                    </div>
-                    <div class="game-info">
-                        <h3>Tung Gate Run</h3>
-                         <div class="game-links">
-                            <a href="https://play.google.com/store/apps/details?id=com.ToxicSahur.TungGateRun" target="_blank" class="store-button google">Get on Google Play</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="game-card">
-                    <div class="game-preview">
-                        <img src="images/Designer (3).png" alt="Streamer Mafia: Zachraňte vojína Nesttu" class="game-icon" style="width:100%;height:auto;object-fit:cover;">
-                    </div>
-                    <div class="game-info">
-                        <h3>Streamer Mafia: Zachraňte vojína Nesttu</h3>
-                        <div class="game-links">
-                            <a href="https://toxic-pastika-04.itch.io/streamer-mafie-zachrate-vojna-nesttu" target="_blank" class="store-button itch">View on itch.io</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="languages" class="content-section">
-            <h2>Languages 🗣️</h2>
-            <ul class="language-list">
-                <li>Czech (C2 - Native) 🇨🇿</li>
-                <li>English (A1 - Basic)</li>
-            </ul>
-        </section>
-
-    </main>
-
-    <footer class="footer-section">
-        
-        <div class="info-bar" id="info-bar">
-            <p>Loading live data...</p>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
         </div>
-        
-        <h2>Let's Connect 📫</h2>
-        <p>Feel free to reach out or find me on social media:</p>
-        <div class="social-links">
-            <a href="https://www.instagram.com/memetiktokcz/" target="_blank">Instagram</a>
-            <a href="https://www.tiktok.com/@memetiktokcz" target="_blank">TikTok</a>
-            <a href="https://www.youtube.com/@memetiktokcz5696" target="_blank">YouTube</a>
-            <a href="https://www.linkedin.com/in/dominik-g-9aab2b225/" target="_blank">LinkedIn</a>
-            <a href="https://github.com/Dominik-G-js" target="_blank">GitHub</a>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="#about">O mně</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Zkušenosti</a>
+        <a href="#projects">Projekty</a>
+        <a href="#contact">Kontakt</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-badge">Available for work</div>
+            <h1 class="hero-title">
+                <span class="hero-greeting">Ahoj, jsem</span>
+                <span class="hero-name">Dominik Gomboš</span>
+            </h1>
+            <div class="hero-roles">
+                <span class="typed-text" id="typed-text"></span>
+                <span class="cursor">|</span>
+            </div>
+            <p class="hero-desc">
+                Fullstack vývojář se zaměřením na <strong>e-commerce</strong>,
+                <strong>AI automatizaci</strong> a <strong>prompt engineering</strong>.
+                Dodávám projekty end-to-end od analýzy po nasazení.
+            </p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number" data-count="5">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label">Let praxe</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-count="20">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label">E-shopů</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-count="3">0</span>
+                    <span class="stat-label">Vydané hry</span>
+                </div>
+            </div>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">Moje projekty</a>
+                <a href="#contact" class="btn btn-outline">Kontaktuj mě</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">01</span>
+                <h2>O mně</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>
+                        Jsem samostatný fullstack vývojář s více než <strong>5 lety praxe</strong> v e-commerce,
+                        AI engineeringu a herním vývoji. Ve firmě jsem fungoval jako end-to-end řešitel –
+                        od komunikace se zákazníky, analýzy a nacenění až po kompletní frontend i backend realizaci.
+                    </p>
+                    <p>
+                        Mám rozsáhlé zkušenosti s <strong>migracemi e-shopů</strong> (PrestaShop, Shoptet,
+                        WooCommerce → Upgates/WordPress), včetně převodů databází, hostingů a kompletních dat.
+                    </p>
+                    <p>
+                        <strong>AI je budoucnost</strong> – a já ji aktivně tvořím. Využívám AI pro automatizaci,
+                        tvorbu nástrojů, prompt engineering a integraci do reálných projektů.
+                        Od AI agentů přes generování obsahu až po optimalizaci celých workflow.
+                    </p>
+                </div>
+                <div class="about-highlights">
+                    <div class="highlight-card">
+                        <div class="highlight-icon">🤖</div>
+                        <h3>AI & Automatizace</h3>
+                        <p>AI agenti, prompt engineering, automatizace workflow, generování obsahu</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-icon">🛒</div>
+                        <h3>E-commerce</h3>
+                        <p>20+ e-shopů, migrace platforem, custom funkce, API integrace</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-icon">🎮</div>
+                        <h3>Game Dev</h3>
+                        <p>Unity, C#, 3 vydané hry na Google Play a itch.io</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section section-alt" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">02</span>
+                <h2>Technologie & Skills</h2>
+            </div>
+            <div class="skills-categories">
+                <div class="skill-group">
+                    <h3 class="skill-group-title">Frontend</h3>
+                    <div class="skill-pills">
+                        <span class="pill pill-blue">JavaScript</span>
+                        <span class="pill pill-orange">HTML5</span>
+                        <span class="pill pill-purple">CSS3</span>
+                        <span class="pill pill-green">Vue.js</span>
+                        <span class="pill pill-blue">React</span>
+                        <span class="pill pill-purple">AJAX</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3 class="skill-group-title">Backend</h3>
+                    <div class="skill-pills">
+                        <span class="pill pill-purple">PHP</span>
+                        <span class="pill pill-red">Laravel</span>
+                        <span class="pill pill-green">Node.js</span>
+                        <span class="pill pill-blue">Nette</span>
+                        <span class="pill pill-orange">Latte</span>
+                        <span class="pill pill-purple">Python</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3 class="skill-group-title">CMS & E-commerce</h3>
+                    <div class="skill-pills">
+                        <span class="pill pill-blue">WordPress</span>
+                        <span class="pill pill-purple">WooCommerce</span>
+                        <span class="pill pill-green">Upgates</span>
+                        <span class="pill pill-orange">Shoptet</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3 class="skill-group-title">Databáze & Nástroje</h3>
+                    <div class="skill-pills">
+                        <span class="pill pill-blue">SQL</span>
+                        <span class="pill pill-orange">MySQL</span>
+                        <span class="pill pill-green">Git</span>
+                        <span class="pill pill-purple">Unity</span>
+                        <span class="pill pill-red">C#</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3 class="skill-group-title">AI & Automatizace</h3>
+                    <div class="skill-pills">
+                        <span class="pill pill-glow">Prompt Engineering</span>
+                        <span class="pill pill-glow">AI Agenti</span>
+                        <span class="pill pill-glow">Workflow Automatizace</span>
+                        <span class="pill pill-glow">AI Content Generation</span>
+                        <span class="pill pill-glow">LLM Integrace</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">03</span>
+                <h2>Pracovní zkušenosti</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Programátor</h3>
+                                <span class="company">Webdevel s.r.o., Ostrava</span>
+                            </div>
+                            <span class="timeline-date">2022 – 2025</span>
+                        </div>
+                        <ul class="timeline-list">
+                            <li>Vývoj a správa e-commerce řešení na platformách Upgates a WordPress (WooCommerce)</li>
+                            <li>Kompletní frontend i backend vývoj (Latte/Nette, JavaScript, AJAX, CSS)</li>
+                            <li>Migrace 20+ e-shopů (PrestaShop, Shoptet, WooCommerce → Upgates/WordPress)</li>
+                            <li>Převod kompletních dat: produkty, zákazníci, objednávky, databáze, hosting</li>
+                            <li>Vývoj custom funkcí a napojení na externí API</li>
+                            <li>Optimalizace výkonu a SEO (zrychlení načítání, lepší indexace a UX)</li>
+                            <li>Přímá komunikace se zákazníky (analýza, návrh řešení, odhady)</li>
+                            <li>Využití AI pro automatizaci workflow (generování obsahu, interní nástroje, AI agenti)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Programátor Junior</h3>
+                                <span class="company">Webdevel s.r.o., Ostrava</span>
+                            </div>
+                            <span class="timeline-date">2019 – 2020</span>
+                        </div>
+                        <ul class="timeline-list">
+                            <li>Podpora při vývoji webových projektů</li>
+                            <li>Asistence s kódováním, debuggingem a implementací nových funkcí</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section section-alt" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">04</span>
+                <h2>Projekty</h2>
+            </div>
+
+            <!-- Project Tabs -->
+            <div class="project-tabs">
+                <button class="tab-btn active" data-tab="ecommerce">E-commerce weby</button>
+                <button class="tab-btn" data-tab="games">Hry</button>
+                <button class="tab-btn" data-tab="references">Další reference</button>
+            </div>
+
+            <!-- E-commerce Projects -->
+            <div class="tab-content active" id="tab-ecommerce">
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-card-header">
+                            <div class="project-icon">🖨️</div>
+                            <a href="https://e-abctiskarna.cz" target="_blank" class="project-link" aria-label="Visit website">↗</a>
+                        </div>
+                        <h3>e-abctiskarna.cz</h3>
+                        <p>Kompletní redesign frontendu a homepage. Vývoj custom produktového konfigurátoru. Server-side řešení pro upload dat a obrázků.</p>
+                        <div class="project-tags">
+                            <span>Frontend</span><span>Konfigurátor</span><span>Backend</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-card-header">
+                            <div class="project-icon">🏭</div>
+                            <a href="https://vop.cz" target="_blank" class="project-link" aria-label="Visit website">↗</a>
+                        </div>
+                        <h3>vop.cz</h3>
+                        <p>Kompletní přestavba WordPress šablony podle grafického návrhu. Vícejazyčná implementace.</p>
+                        <div class="project-tags">
+                            <span>WordPress</span><span>Šablona</span><span>Multijazyčné</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-card-header">
+                            <div class="project-icon">🍷</div>
+                            <a href="https://rynek.club" target="_blank" class="project-link" aria-label="Visit website">↗</a>
+                        </div>
+                        <h3>rynek.club</h3>
+                        <p>Implementace frontendových komponent pro výpisy dat. Vícejazyčné překlady.</p>
+                        <div class="project-tags">
+                            <span>Frontend</span><span>Datové výpisy</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-card-header">
+                            <div class="project-icon">☕</div>
+                            <a href="https://blasercafe-czech.cz" target="_blank" class="project-link" aria-label="Visit website">↗</a>
+                        </div>
+                        <h3>blasercafe-czech.cz</h3>
+                        <p>Vývoj frontendových komponent a úprav pro e-shop s kávou.</p>
+                        <div class="project-tags">
+                            <span>Frontend</span><span>E-shop</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-card-header">
+                            <div class="project-icon">🏠</div>
+                            <a href="https://nemovitosti.ovajih.cz" target="_blank" class="project-link" aria-label="Visit website">↗</a>
+                        </div>
+                        <h3>nemovitosti.ovajih.cz</h3>
+                        <p>Úprava a vylepšení filtrovacího systému. Implementace grafických změn.</p>
+                        <div class="project-tags">
+                            <span>Filtry</span><span>UI/UX</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-card-header">
+                            <div class="project-icon">🔧</div>
+                            <a href="https://shopfix.cz" target="_blank" class="project-link" aria-label="Visit website">↗</a>
+                        </div>
+                        <h3>shopfix.cz</h3>
+                        <p>Kompletní spuštění a nastavení e-commerce projektu od nuly.</p>
+                        <div class="project-tags">
+                            <span>Launch</span><span>Setup</span><span>E-shop</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Games Tab -->
+            <div class="tab-content" id="tab-games">
+                <div class="games-grid">
+                    <div class="game-card">
+                        <div class="game-visual">
+                            <img src="images/sahur-pack-icon.png" alt="Sahur Pack" class="game-icon">
+                        </div>
+                        <div class="game-info">
+                            <h3>Sahur Pack</h3>
+                            <p>Mobilní hra vyvinutá v Unity.</p>
+                            <div class="game-buttons">
+                                <a href="https://toxic-pastika-04.itch.io/sahur-pack" target="_blank" class="btn-game btn-itch">itch.io</a>
+                                <a href="https://play.google.com/store/apps/details?id=com.ToxicSahur.SahurPack" target="_blank" class="btn-game btn-google">Google Play</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <div class="game-visual">
+                            <img src="images/tung-gate-run-icon.png" alt="Tung Gate Run" class="game-icon">
+                        </div>
+                        <div class="game-info">
+                            <h3>Tung Gate Run</h3>
+                            <p>Mobilní hra dostupná na Google Play.</p>
+                            <div class="game-buttons">
+                                <a href="https://play.google.com/store/apps/details?id=com.ToxicSahur.TungGateRun" target="_blank" class="btn-game btn-google">Google Play</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <div class="game-visual">
+                            <img src="images/Designer (3).png" alt="Streamer Mafia" class="game-icon game-icon-wide">
+                        </div>
+                        <div class="game-info">
+                            <h3>Streamer Mafia: Zachraňte vojína Nesttu</h3>
+                            <p>Hra inspirovaná českými streamery.</p>
+                            <div class="game-buttons">
+                                <a href="https://toxic-pastika-04.itch.io/streamer-mafie-zachrate-vojna-nesttu" target="_blank" class="btn-game btn-itch">itch.io</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- References Tab -->
+            <div class="tab-content" id="tab-references">
+                <p class="references-intro">Weby, na kterých jsem pracoval na úpravách nebo přispěl k vývoji:</p>
+                <div class="references-grid">
+                    <a href="https://www.mexta.cz/" target="_blank" class="ref-link">mexta.cz</a>
+                    <a href="https://www.nasport.cz/" target="_blank" class="ref-link">nasport.cz</a>
+                    <a href="https://www.drevo-albre.cz/" target="_blank" class="ref-link">drevo-albre.cz</a>
+                    <a href="https://www.jakama-ge.sk/" target="_blank" class="ref-link">jakama-ge.sk</a>
+                    <a href="https://generalfactory.cz/" target="_blank" class="ref-link">generalfactory.cz</a>
+                    <a href="https://www.weburny.cz/" target="_blank" class="ref-link">weburny.cz</a>
+                    <a href="https://www.zvarmetal.sk/" target="_blank" class="ref-link">zvarmetal.sk</a>
+                    <a href="https://www.panvicky.cz/" target="_blank" class="ref-link">panvicky.cz</a>
+                    <a href="https://eshop.motomodrice.cz/" target="_blank" class="ref-link">eshop.motomodrice.cz</a>
+                    <a href="https://www.solar-market.cz/" target="_blank" class="ref-link">solar-market.cz</a>
+                    <a href="https://www.shoei.cz/" target="_blank" class="ref-link">shoei.cz</a>
+                    <a href="https://www.wereco.store/" target="_blank" class="ref-link">wereco.store</a>
+                    <a href="https://www.tasteofasia.cz/" target="_blank" class="ref-link">tasteofasia.cz</a>
+                    <a href="https://www.olzatex.cz/" target="_blank" class="ref-link">olzatex.cz</a>
+                    <a href="https://www.isvetreklamy.cz/" target="_blank" class="ref-link">isvetreklamy.cz</a>
+                    <a href="https://www.malvinka.cz/" target="_blank" class="ref-link">malvinka.cz</a>
+                    <a href="https://www.bodycondition.sk/" target="_blank" class="ref-link">bodycondition.sk</a>
+                    <a href="https://www.e-pribory.cz/" target="_blank" class="ref-link">e-pribory.cz</a>
+                    <a href="https://www.halvarssons-lindstrands.cz/" target="_blank" class="ref-link">halvarssons-lindstrands.cz</a>
+                    <a href="https://www.bimo.cz/" target="_blank" class="ref-link">bimo.cz</a>
+                    <a href="https://www.florbal4u.com/" target="_blank" class="ref-link">florbal4u.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">05</span>
+                <h2>Pojďme spolupracovat</h2>
+            </div>
+            <div class="contact-content">
+                <p class="contact-text">
+                    Hledáte vývojáře pro e-commerce projekt, AI automatizaci nebo cokoli mezi tím?
+                    Ozvěte se mi a probereme to.
+                </p>
+                <a href="mailto:dominik.gombos@gmail.com" class="contact-email">dominik.gombos@gmail.com</a>
+                <div class="social-links">
+                    <a href="https://github.com/Dominik-G-js" target="_blank" class="social-btn">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                        GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/dominik-g-9aab2b225/" target="_blank" class="social-btn">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <span class="footer-copy">© 2025 Dominik Gomboš</span>
+                <span class="footer-built">Postaveno s ❤️ a AI</span>
+            </div>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
     <script src="script.js"></script>
 </body>
